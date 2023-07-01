@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": "https://github.com/mohammedshajahan7/lock-box",
   "author": "Mohammed",
