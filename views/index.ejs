@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lock Box</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('./includes/header'); %>
+
+    <div class="app">
+        <div class="container">
+            <% if(locals.fileLink) { %>
+                <div class="getFile">
+                    <div class="top">
+                        <span>Your file is ready:</span> 
+                        <a href="<%= locals.fileLink %>"><%= locals.fileLink %></a>
+                    </div>
+        
+                    <div class="bottom">
+                        <a href="<%= locals.fileLink %>" class="download_btn">Download File</a>
+                        <button 
+                            class="cpy_btn"
+                            onclick="copyUrl('<%= locals.fileLink %>')"
+                        >Copy url</button>
+                    </div>
+                </div>
+            <% } %>
+    
+            <form 
+                method="post" 
+                action="/file/upload" 
+                enctype="multipart/form-data"
+            >
+                <div class="file-input-group">
+                    <label for="id_file">Upload a file for sharing</label>
+                    <input 
+                        type="file" 
+                        name="file" 
+                        id="id_file" 
+                        required
+                    />
+                </div>
+    
+                <div class="input-container">
+                    <input
+                        type="password"
+                        name="password"
+                        id="id_password"
+                        class="input-box"
+                        autocomplete="off"
+                        placeholder="Password to protect your file"
+                    />
+                    <label class="label" for="id_password">Password</label>
+                </div>
+    
+                <button type="submit" class="share-btn">Share</button>
+            </form>
+        </div>
+    </div>
+
+    <%- include('./includes/footer'); %>
+
+    <script src="/scripts/script.js"></script>
+    
+    <script>
+        function copyUrl(url) {
+            var tempInput = document.createElement('input')
+            tempInput.value = url
+            document.body.appendChild(tempInput)
+            tempInput.select()
+            tempInput.setSelectionRange(0, 99999)
+            document.execCommand('copy')
+            document.body.removeChild(tempInput)
+            alert('URL copied to clipboard!')
+        }
+    </script>
+</body>
+</html>

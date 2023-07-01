@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #191724;
+    color: #fff;
+    height: 100vh;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.app {
+    height: calc(100vh - 124px);
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    padding: 30px;
+    border: 2px solid #2f2c45;
+}
+
+.head {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.error-message span {
+    color: crimson;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+}
+
+.title {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.subtitle {
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.getFile {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #2f2c45;
+    border-radius:4px;
+    font-size: 18px;
+    transition: all 0.3s;
+    margin-bottom: 2rem;
+}
+
+.getFile .top span {
+    margin-right: 0.3rem;
+}
+
+.getFile .top a {
+    color: #fff;
+    color: dodgerblue;
+}
+
+.getFile .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cpy_btn {
+    padding: 0.5rem;
+    flex: 1;
+    border: 2px solid #2f2c45;
+    background: teal;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+
+    margin-top: 0.8rem;
+
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    cursor: pointer;
+}
+
+.download_btn {
+    padding: 0.5rem;
+    flex: 2;
+    height: 100%;
+    width: 100%;
+    border: 2px solid #2f2c45;
+    background: crimson;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+
+    margin-top: 0.8rem;
+
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.share-btn {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #2f2c45;
+    background: rgba(14, 121, 228, 0.824);
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+    margin-top: 2rem;
+
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    cursor: pointer;
+}
+
+.file-input-group {
+    margin-bottom: 30px;
+}
+
+.file-input-group label {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.file-input-group input {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #2f2c45;
+    background: #272530;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+
+    margin-top: 1.5rem;
+}
+
+.input-container {
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: #b3b3b3;
+}
+
+.input-box {
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #2f2c45;
+    background: #272530;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    transition: all 0.3s;
+    color: #fff;
+}
+
+.label::before {
+    content: "";
+    height: 5px;
+    background: #272530;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.input-box:focus {
+    border: 2px solid #7e4ccb;
+}
+
+.input-box:focus+.label, .filled {
+    top: -10px;
+    color: #7e4ccb;
+    font-size: 14px;
+}
+
+.input-box::placeholder {
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.input-box:focus::placeholder {
+    opacity: 1;
+}
