@@ -1,5 +1,5 @@
 import mongoose from "mongoose"
-import { mongoConfig, serverConfig } from "../config.js"
+import { mongoConfig, serverConfig } from "./config.js"
 
 export default class Server {
     static startServer = async (app) => {
