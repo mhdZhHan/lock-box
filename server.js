@@ -9,13 +9,8 @@ export default class Server {
                 console.log('Connected to database successfully')
 
                 // server listening
-                
-                // app.listen(serverConfig.port, serverConfig.ip, ()=> {
-                //     console.log(`Server running on http://${serverConfig.ip}:${serverConfig.port}`)
-                // })
-
-                app.listen(serverConfig.port, () => {
-                    console.log('server is running on port: ', serverConfig.port)
+                app.listen(serverConfig.port, serverConfig.ip, ()=> {
+                    console.log(`Server running on http://${serverConfig.ip}:${serverConfig.port}`)
                 })
             })
             .catch((error) => {
